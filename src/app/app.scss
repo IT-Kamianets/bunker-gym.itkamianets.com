@@ -1,0 +1,38 @@
+/* Specific layout styles for the Bunker Gym */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+  }
+}
+
+.map-container iframe {
+  filter: grayscale(0.5) contrast(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  .hero .title {
+    font-size: 3rem !important;
+  }
+  .hero .subtitle {
+    font-size: 1.5rem !important;
+  }
+}
+
+.navbar-burger {
+  color: var(--primary) !important;
+  span {
+    height: 2px;
+    width: 20px;
+  }
+}

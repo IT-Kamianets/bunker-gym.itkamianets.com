@@ -1,0 +1,97 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item brand-link" routerLink="/">
+        <img src="image/logo.png" alt="Logo" style="max-height: 40px; border-radius: 50%; object-fit: cover; aspect-ratio: 1/1;" class="mr-2">
+        <h1 class="title is-4 has-text-primary mb-0">BUNKER GYM</h1>
+      </a>
+
+      <div class="is-flex is-align-items-center is-hidden-desktop ml-auto mr-3">
+        <button class="theme-toggle" (click)="toggleTheme()" [title]="isDarkTheme ? 'Світла тема' : 'Темна тема'">
+          <i class="fas" [ngClass]="isDarkTheme ? 'fa-sun' : 'fa-moon'"></i>
+        </button>
+      </div>
+
+      <a role="button" class="navbar-burger" [class.is-active]="showMenu" (click)="toggleMenu()" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" [class.is-active]="showMenu">
+      <div class="navbar-end">
+        <a class="navbar-item" routerLink="/" fragment="about" (click)="toggleMenu()">Про нас</a>
+        <a class="navbar-item" routerLink="/" fragment="services" (click)="toggleMenu()">Послуги</a>
+        <a class="navbar-item" routerLink="/" fragment="pricing" (click)="toggleMenu()">Ціни</a>
+        <a class="navbar-item" routerLink="/coaches" (click)="toggleMenu()">Тренери</a>
+        <a class="navbar-item" routerLink="/" fragment="schedule" (click)="toggleMenu()">Розклад</a>
+        <a class="navbar-item" routerLink="/" fragment="contact" (click)="toggleMenu()">Контакти</a>
+        
+        <div class="navbar-item is-hidden-touch">
+          <button class="theme-toggle" (click)="toggleTheme()" [title]="isDarkTheme ? 'Світла тема' : 'Темна тема'">
+            <i class="fas" [ngClass]="isDarkTheme ? 'fa-sun' : 'fa-moon'"></i>
+          </button>
+        </div>
+
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="https://www.instagram.com/bunker_gym_kp/" target="_blank">
+              <strong>INSTAGRAM</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-6">
+        <h3 class="title is-4 has-text-primary">BUNKER GYM</h3>
+        <p class="mb-4">Твій Бункер — твоя сила. Найкраще місце для твого прогресу в Кам'янці-Подільському.</p>
+        <div class="buttons">
+          <a class="button is-ghost px-2 has-text-primary" href="https://www.instagram.com/bunker_gym_kp/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a class="button is-ghost px-2 has-text-primary" href="https://www.facebook.com/profile.php?id=61561907627001" target="_blank" title="Facebook">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a class="button is-ghost px-2 has-text-primary" href="https://www.google.com/maps/dir//Bunker+Gym+(%D0%91%D1%83%D0%BD%D0%BA%D0%B5%D1%80)/@48.677169,26.5878474,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4733b700147926b1:0x633560f22787c880!2m2!1d26.5878474!2d48.677169" target="_blank" title="Google Maps">
+            <i class="fas fa-map-marked-alt fa-2x"></i>
+          </a>
+        </div>
+      </div>
+      <div class="column is-6">
+        <h3 class="title is-4">Контакти</h3>
+        <p class="mb-2"><i class="fas fa-map-marker-alt has-text-primary mr-2"></i> м. Кам'янець-Подільський, вул. Героїв Маріуполя, 2</p>
+        <p class="mb-2"><i class="fas fa-phone has-text-primary mr-2"></i> +380 96 144 79 28</p>
+        <p class="mb-2"><i class="fas fa-clock has-text-primary mr-2"></i> Пн-Пт: 08:00 - 21:00, Сб: 09:00 - 18:00</p>
+      </div>
+    </div>
+    
+    <hr style="background-color: var(--card-border); height: 1px; margin: 1.5rem 0;">
+    
+    <div class="columns is-vcentered is-mobile is-multiline">
+      <div class="column is-12-mobile is-6-tablet">
+        <p class="has-text-centered-mobile">
+          &copy; 2024 <strong class="has-text-primary">BUNKER GYM</strong>. Всі права захищені.
+        </p>
+      </div>
+      <div class="column is-12-mobile is-6-tablet has-text-right has-text-centered-mobile">
+        <div class="is-flex is-justify-content-flex-end is-justify-content-center-mobile is-align-items-center">
+          <a class="has-text-grey-light mr-3" href="https://github.com/itkamianets" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <p class="is-size-7">
+            designed by <a href="https://github.com/ValeryMakush" target="_blank" class="has-text-grey-light">Valery</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

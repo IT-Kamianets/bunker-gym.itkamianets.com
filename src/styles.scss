@@ -1,0 +1,314 @@
+@import 'bulma/css/bulma.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* Bunker Gym Custom Styles */
+:root {
+  --primary: #f1c40f; /* Gold/Yellow */
+  --bg: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text: #333333;
+  --text-muted: #666666;
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.1);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: #f5f5f5;
+  --footer-text: #666666;
+  --table-bg: #ffffff;
+  --table-text: #333333;
+}
+
+body.dark-theme {
+  --bg: #0a0a0a;
+  --bg-secondary: #121212;
+  --text: #f5f5f5;
+  --text-muted: #888888;
+  --card-bg: #121212;
+  --card-border: rgba(212, 255, 0, 0.1);
+  --navbar-bg: rgba(10, 10, 10, 0.95);
+  --footer-bg: #0a0a0a;
+  --footer-text: #888888;
+  --table-bg: #121212;
+  --table-text: #f5f5f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.title, .subtitle {
+  color: var(--text) !important;
+}
+
+.has-text-primary {
+  color: var(--primary) !important;
+}
+
+.button.is-primary {
+  background-color: var(--primary);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s ease;
+  
+  &:hover {
+    background-color: #d4ac0d;
+    color: #000;
+  }
+}
+
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--card-border);
+  transition: background-color 0.3s;
+}
+
+.navbar-item, .navbar-link {
+  color: var(--text) !important;
+  transition: 0.3s ease;
+
+  &:hover, &.is-active, &:focus, &:active {
+    color: var(--primary) !important;
+    background-color: transparent !important;
+  }
+}
+
+body.dark-theme {
+  .navbar-item, .navbar-link {
+    &:hover, &.is-active, &:focus, &:active {
+      background-color: transparent !important;
+      color: var(--primary) !important;
+    }
+  }
+}
+
+.icon-container {
+  width: 30px;
+  text-align: center;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+  min-height: 80vh;
+  
+  .title, .subtitle {
+    color: #fff !important;
+  }
+  
+  .title {
+    animation: fadeInUp 1s ease-out;
+  }
+  .subtitle {
+    animation: fadeInUp 1.5s ease-out;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  background-color: var(--bg);
+  &.has-background-dark {
+    background-color: var(--bg-secondary) !important;
+  }
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  transition: transform 0.3s, border-color 0.3s;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+  }
+  
+  .card-header-title {
+    color: var(--primary) !important;
+  }
+  
+  .content {
+    color: var(--text-muted);
+  }
+}
+
+.footer {
+  background-color: var(--footer-bg) !important;
+  border-top: 1px solid var(--card-border);
+  color: var(--footer-text);
+  transition: background-color 0.3s;
+  
+  strong {
+    color: var(--text) !important;
+  }
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background-color: var(--primary);
+  }
+
+  &.no-underline::after {
+    display: none;
+  }
+}
+
+.contact-info i {
+  color: var(--primary);
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.table {
+  background-color: var(--table-bg) !important;
+  color: var(--table-text) !important;
+  border: 1px solid var(--card-border);
+  
+  th, td {
+    border-color: var(--card-border) !important;
+    color: var(--table-text) !important;
+    vertical-align: middle !important;
+  }
+  
+  thead th {
+    color: var(--primary) !important;
+  }
+
+  &.is-hoverable tbody tr:hover {
+    background-color: rgba(241, 196, 15, 0.1) !important;
+    color: var(--text) !important;
+  }
+}
+
+.navbar-item.brand-link {
+  &:hover {
+    background-color: transparent !important;
+    .title {
+      color: var(--primary) !important;
+    }
+  }
+}
+
+.pricing-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  height: 100%;
+  border: 1px solid var(--card-border);
+  transition: transform 0.3s, border-color 0.3s;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+  }
+}
+
+.coach-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a !important;
+  border: 1px solid rgba(212, 255, 0, 0.1) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  text-decoration: none !important;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    
+    .card-image img {
+      transform: scale(1.05);
+    }
+  }
+
+  .card-image {
+    position: relative;
+    overflow: hidden;
+    background: #000; /* Black background for contain bars */
+    
+    .image {
+      padding-top: 125%; /* 4:5 Aspect Ratio */
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ensure full photo visibility */
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #1a1a1a !important;
+    
+    .title {
+      color: var(--primary) !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .subtitle {
+      color: #888 !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .content {
+      color: #ccc !important;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+.theme-toggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+  
+  &:hover {
+    color: var(--primary);
+  }
+}
